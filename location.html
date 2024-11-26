@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIRC Locations</title>
+    <link rel="stylesheet" href="location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Bellefair&display=swap" rel="stylesheet">
+    
+    <!-- Include Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<nav>
+    <div class="nav-left">
+        <a href="homepage.html"> 🆂🅸🆁🅲 </a>
+        <a href="news.html">News</a>
+        <a href="location.html">Location</a>
+        <a href="menu.html">Menu</a>
+
+    </div>
+
+    <div class="nav-center"> 
+
+        <a href="ourSignatures.html"> Our Signatures</a>
+
+    </div>
+
+    <div class="nav-right">
+        <a href="reserve.html" class="btn-reserve">Reserve</a>
+        <a href="giftcard.html">Gift Cards</a>
+        <a href="careers.html">Careers</a>
+    </div>
+</nav>
+<body>
+    <header class="header">
+        <div class="header-overlay">
+            <div class="header-content">
+                <h1>SIRC Locations</h1>
+                <p>Your nearest SIRC restaurant</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="locations">
+        <section class="filters">
+            <div class="dropdown">
+                <select id="locationFilter">
+                    <option value="all">All Locations</option>
+                    <option value="downtown">SIRC Toronto Downtown</option>
+                    <option value="uptown">SIRC Toronto Uptown</option>
+                    <option value="suburbs">SIRC Scarborough</option>
+                    <option value="east">SIRC Vaughan</option>
+                    <option value="west">SIRC Mississauga</option>
+                    <option value="north">SIRC Oakville</option>
+                </select>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchRestaurant" placeholder="Search restaurant by location">
+                <span>OR</span>
+                <input type="text" id="searchByName" placeholder="Search by name">
+            </div>
+        </section>
+
+        <section id="locationsList" class="locations-list">
+            <!-- Location items will be dynamically added here -->
+        </section>
+    </main>
+
+    <!-- Add text above the map -->
+    <p id="mapText">Find us on the map</p>
+
+    <!-- Map Container -->
+    <div id="map" style="width: 50%; height: 400px; border: 2px solid #D4AF37; border-radius: 10px; margin-top: 20px;"></div>
+
+    <footer class="footer">
+        <p>© 2024 SIRC Restaurants. All rights reserved.</p>
+    </footer>
+
+    <!-- Include Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
+
+

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signature Dishes</title>
+  <link rel="stylesheet" href="signature.css">
+</head>
+<body>
+ 
+<!-- Navigation bar -->
+<nav>
+    <div class="nav-left">
+        <a href="homepage.html"> 🆂🅸🆁🅲 </a>
+        <a href="news.html">News</a>
+        <a href="location.html">Location</a>
+        <a href="menu.html">Menu</a>
+
+    </div>
+
+    <div class="nav-center"> 
+
+        <a href="ourSignatures.html"> Our Signatures</a>
+
+    </div>
+
+    <div class="nav-right">
+        <a href="reserve.html" class="btn-reserve">Reserve</a>
+        <a href="giftcard.html">Gift Cards</a>
+        <a href="careers.html">Careers</a>
+    </div>
+</nav>
+
+  <h2 class="section-heading">Meet our Chefs</h2>
+  <hr class="section-line">
+
+  <section class="signature-dishes">
+    <div class="dish" id="dish-1" onclick="showPopup('shagufta')">
+      <div class="big-letter">S</div>
+      <img src="shagufta.jpg" alt="Dish by Chef Shagufta">
+      <h3>Chef: Shagufta</h3>
+      <span>click me</span>
+    </div>
+
+    <div class="dish" id="dish-2" onclick="showPopup('inshal')">
+      <div class="big-letter">I</div>
+      <img src="inshal.jpeg" alt="Dish by Chef Inshal">
+      <h3>Chef: Inshal</h3>
+      <span>click me</span>
+    </div>
+
+    <div class="dish" id="dish-3" onclick="showPopup('rida')">
+      <div class="big-letter">R</div>
+      <img src="rida.jpeg" alt="Dish by Chef Rida">
+      <h3>Chef: Rida</h3>
+
+    </div>
+
+    <div class="dish" id="dish-4" onclick="showPopup('caren')">
+      <div class="big-letter">C</div>
+      <img src="caren.png" alt="Dish by Chef Caren">
+      <h3>Chef: Caren</h3>
+      <span>click me</span>
+
+    </div>
+  </section>
+
+  <!-- Popup Container -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="popup-close" onclick="closePopup()">×</span>
+      <h3 id="popup-title"></h3>
+      <p id="popup-text"></p>
+    </div>
+  </div>
+
+  <!-- Backstory Section -->
+  <section class="backstory-section">
+    <div class="backstory-content">
+      <h2>Our Mission</h2>
+      <p>
+        In the heart of a bustling city, four friends embarked on a culinary journey to share their love for food with the world.
+        From the precision of preparation to the delicate presentation, every dish was crafted with passion and a touch of their personal stories.
+      
+        Together, they envisioned a space where food was more than just a meal—it was an art form.
+        What began as a shared dream has now flourished into a celebrated gourmet destination.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    const stories = {
+      shagufta: {
+        title: "Chef Shagufta",
+        text: "Chef Shagufta is a visionary chef who combines bold flavors with traditional recipes. Her culinary journey began in her grandmother's kitchen, where she mastered the art of balancing spices."
+      },
+      inshal: {
+        title: "Chef Inshal",
+        text: "Chef Inshal is a perfectionist known for her attention to detail. She believes every dish should tell a story and takes pride in crafting visually stunning and delicious meals."
+      },
+      rida: {
+        title: "Chef Rida",
+        text: "Chef Rida is an innovator who loves to put modern twists on classic dishes. Her experimental approach to cooking has earned her a reputation for creativity and bold flavors."
+      },
+      caren: {
+        title: "Chef Caren",
+        text: "Chef Caren brings warmth and heart to every dish she creates. Her passion for food shines through her carefully crafted recipes, inspired by her travels and diverse experiences."
+      }
+    };
+
+    function showPopup(chefId) {
+      const popup = document.getElementById("popup");
+      const title = document.getElementById("popup-title");
+      const text = document.getElementById("popup-text");
+
+      title.textContent = stories[chefId].title;
+      text.textContent = stories[chefId].text;
+
+      popup.style.display = "flex";
+    }
+
+    function closePopup() {
+      const popup = document.getElementById("popup");
+      popup.style.display = "none";
+    }
+  </script>
+    <footer>
+        <p>© 2024 SIRC Restaurants. All rights reserved.</p>
+    </footer>
+</body>
+</html>

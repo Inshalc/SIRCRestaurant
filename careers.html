@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at SIRC Restaurants</title>
+    <link rel="stylesheet" href="careers.css">
+</head>
+<body>
+
+    <!-- Navigation bar -->
+ <nav>
+    <div class="nav-left">
+        <a href="homepage.html"> 🆂🅸🆁🅲 </a>
+        <a href="news.html">News</a>
+        <a href="location.html">Location</a>
+        <a href="menu.html">Menu</a>
+
+    </div>
+
+    <div class="nav-center"> 
+        <a href="ourSignatures.html"> Our Signatures</a>
+
+    </div>
+    <div class="nav-right">
+        <a href="reserve.html" class="btn-reserve">Reserve</a>
+        <a href="giftcard.html">Gift Cards</a>
+        <a href="careers.html">Careers</a>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1>Careers</h1>
+            <p>This is about you. Your passion, purpose, and potential. Your journey starts here.</p>
+            <div class="cta-buttons">
+                <a href="careersForm.html" class="apply-btn" target="_blank">Apply Today</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Careers Content Section -->
+    <section class="careers-content">
+        <h2>Why Join SIRC Restaurants?</h2>
+        <p>At SIRC Restaurants, we believe in nurturing talent and providing opportunities for growth. Whether you're starting your journey or seeking a new challenge, we have a place for you in our family.</p>
+
+        <div class="features">
+            <div class="feature">
+                <h3>Work-Life Balance</h3>
+                <p>Flexible schedules that suit your lifestyle.</p>
+            </div>
+            <div class="feature">
+                <h3>Career Growth</h3>
+                <p>Opportunities to advance within the organization.</p>
+            </div>
+            <div class="feature">
+                <h3>Team Culture</h3>
+                <p>Be a part of a supportive and vibrant team.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Job Postings Section -->
+    <section class="job-section">
+        <h1>Job Openings</h1>
+        <div class="filter-container">
+            <select id="location-filter">
+                <option value="All">All Locations</option>
+                <option value="Downtown">SIRC Downtown</option>
+                <option value="Uptown">SIRC Uptown</option>
+                <option value="Suburbs">SIRC Suburbs</option>
+                <option value="East">SIRC Eastside</option>
+                <option value="West">SIRC Westside</option>
+                <option value="North">SIRC North</option>
+            </select>
+            <select id="department-filter">
+                <option value="all">All Departments</option>
+                <option value="Kitchen">Kitchen</option>
+                <option value="Service">Service</option>
+                <option value="Management">Management</option>
+            </select>
+            <button id="search-button">Search</button>
+        </div>
+        <div class="job-listings-container">
+            <ul class="job-listings" id="job-listings">
+                <!-- Job postings will go here dynamically -->
+            </ul>
+        </div>
+        <p id="no-results" class="hidden">No jobs match your filters. Try different options.</p>
+    </section>
+
+    <!-- Job Description Section -->
+    <div id="job-description" class="job-description hidden">
+        <h2 id="job-title">Job Title</h2>
+        <p id="job-details">Job details and description go here...</p>
+    </div>
+
+    <script>
+        // Mock job data
+        const jobData = [
+            { 
+                title: "Technicians", 
+                location: "Downtown", 
+                department: "Service", 
+                description: `
+                   <strong>Description </strong><br>
+
+ This is about you—your passion, purpose, and potential. At SIRC Restaurants, we see care, drive, confidence, and curiosity in you. When you join our team, you can expect energy, excitement, and a vibrant atmosphere. Through our people-focused culture, we are committed to the continuous growth and development of our team members.<br>
+At <strong>SIRC </strong>, we don’t just hire hosts and hostesses—we hire leaders. 
+<br>
+<br>
+The<strong> Technician Team </strong> we don’t just hire technicians—we develop problem-solvers and innovators who keep our operations running seamlessly. 
+<br><br> As a <strong> Technician Leader </strong>, you are responsible for troubleshooting, maintaining, and repairing equipment and systems across the restaurant. Your role is pivotal in ensuring operational efficiency, safety, and reliability. You bring expertise, resourcefulness, and dedication to solving challenges and enabling the team to focus on delivering excellence.<br>
+
+<hr>
+<br>
+<strong>Requirements</strong><br>
+
+Proven technical skills in troubleshooting and maintaining equipment.<br>
+Ability to work in a fast-paced, dynamic environment with attention to detail.<br>
+A passion for problem-solving and creating efficient solutions.<br>
+A proactive mindset with a focus on safety and reliability.<br>
+A desire to grow personally and professionally through continuous learning.<br>
+
+
+<hr> <br>
+<strong>Core Values</strong><br>
+You value honesty and humility, act with integrity, and follow through on commitments.<br>
+You approach challenges with determination and a sense of fun.<br>
+You are visionary, creative, and willing to take risks to lead.<br>
+You foster a strong team culture and are committed to its success.<br>
+You prioritize quality, professionalism, and excellence.<br>
+You are passionate about empowering others to reach their potential.<br>
+<hr> <br>
+<strong>Compensation</strong><br>
+<strong> $22-$28/hour</strong><br>
+This includes participation in the restaurant tip pool.<br>
+<hr> <br>
+<strong>Benefits</strong><br>
+Eligible for participation in the tip pool program to boost your income<br>
+Competitive base compensation<br>
+Flexible scheduling to suit your personal and family needs<br>
+Ongoing mentorship to support your goals<br>
+A fun, inclusive, and team-driven work environment<br>
+Fast-paced, dynamic, and agile work atmosphere<br>
+Access to world-class culinary and service training<br>
+Opportunities to compete in culinary and bar challenges<br>
+Meal discounts<br>
+Discounts on fitness memberships<br>
+Recruitment and referral bonus program incentives<br>
+<hr> <br> 
+<strong> Your Journey Starts Here</strong><br>
+ If you’re looking for a place to reach your potential, we’d love to meet you. Roll up your sleeves and begin your journey with SIRC Restaurants.<br>
+SIRC Restaurants is an Equal Opportunity Employer. We thank all applicants for their time and interest in joining SIRC. Only candidates under consideration for roles will be contacted to proceed further in the recruitment process.<br>
+SIRC Restaurants provides reasonable accommodations for qualified candidates and employees, including accommodations for disabilities, medical needs, and religious practices. <br>
+                `
+            },
+            { 
+                title: "Server", 
+                location: "Uptown", 
+                department: "Service", 
+                description: `
+                  </strong>Description</strong>
+This is about you—your passion, purpose, and potential. At SIRC Restaurants, we see care, drive, confidence, and curiosity in you. When you join our team, you can expect energy, excitement, and a vibrant atmosphere. Through our people-focused culture, we are committed to the continuous growth and development of our team members.<br>
+
+<br>
+At <strong>SIRC</strong>, we don’t just hire servers—we cultivate beverage artisans and leaders. The Barista Team is at the forefront of delivering exceptional handcrafted beverages and personalized guest experiences. As a barista, you are part of a team that sets the standard for quality, creativity, and service. You bring passion and dedication to every cup, elevating the art of coffee and beverages.
+<br>
+<br>
+As a<strong> Server </strong>, you are responsible for crafting impeccable drinks, building genuine connections with guests, and maintaining an inviting atmosphere. You bring warmth and enthusiasm to every interaction, ensuring that every guest feels valued and leaves with a memorable experience. Your professionalism and commitment inspire the team to thrive and uphold the highest standards.
+<br>
+<hr>
+<br>
+<strong> Core Values </strong><br>
+You value honesty and humility, act with integrity, and follow through on commitments.<br>
+
+
+You approach challenges with determination and a sense of fun.<br>
+
+
+You are creative, innovative, and willing to take risks to lead.<br>
+
+
+You foster a strong team culture and are committed to its success.<br>
+
+
+You prioritize quality, professionalism, and delivering excellence.<br>
+
+
+You are passionate about mentoring and developing the potential in others.<br>
+
+<hr>
+<br>
+<strong>Requirements </strong><br>
+Proven ability to lead and inspire a high-performing culinary team.<br>
+
+
+A passion for food, creativity, and delivering exceptional dining experiences.<br>
+
+
+Strong organizational skills and attention to detail to ensure quality and consistency.<br>
+
+
+A desire to grow personally and professionally through continuous learning.<br>
+
+
+Ability to maintain composure and thrive in a fast-paced, dynamic environment.<br>
+
+<hr>
+<br>
+<strong> Compensation </strong> <br>
+
+ $19 - $22/hr<br>
+This includes participation in the restaurant tip pool.<br>
+
+<hr>
+<br>
+<strong> Benefits </strong><br>
+Eligible for tip or bonus pool programs (role-dependent), enhancing your earning potential<br>
+
+
+Extended health plan<br>
+
+
+Maternity, parental, and adoption leave top-up programs<br>
+
+
+Mental and physical health support<br>
+
+
+Flexible scheduling for personal and family needs<br>
+
+
+Industry partner incentives<br>
+
+
+Tuition, education, and professional accreditation subsidies<br>
+
+
+Recruitment and referral bonus programs<br>
+
+
+Ongoing leadership development opportunities <br>
+
+<hr>
+<br>
+<strong> Follow Your Path </strong><br>
+ At SIRC Restaurants, our success is driven by a dedicated and performance-oriented team. Your journey begins here. <br>
+SIRC Restaurants is an Equal Opportunity Employer. We thank all applicants for their time and interest in joining SIRC. Only those under consideration for roles will be contacted to proceed further in the recruitment process.<br>
+SIRC Restaurants provides reasonable accommodations for qualified candidates and employees, including accommodations for disabilities, medical needs, and religious practices.<br>
+                `
+            },
+            { 
+                title: "Chef", 
+                location: "Suburbs", 
+                department: "Kitchen", 
+                description: `
+                   </strong>Description</strong>
+This is about you—your passion, purpose, and potential. At SIRC Restaurants, we see care, drive, confidence, and curiosity in you. When you join our team, you can expect energy, excitement, and a vibrant atmosphere. Through our people-focused culture, we are committed to the continuous growth and development of our team members.<br>
+
+<br>
+At <strong>SIRC</strong>, we don’t just hire chefs—we develop culinary leaders. The Culinary Team is the heart of our restaurant, dedicated to delivering exceptional quality and innovation. As a chef, you are part of a team that sets the standard for excellence, creativity, and leadership in the kitchen. Your role goes beyond preparing meals; you inspire and mentor your team while crafting unforgettable dining experiences for our guests.
+<br>
+<br>
+As a<strong> Culinary Leader</strong>, you are responsible for upholding the highest culinary standards, ensuring consistency and creativity in every dish. You take ownership of the kitchen’s operations, lead with professionalism, and cultivate a supportive, collaborative culture. Your leadership inspires those around you to achieve excellence and thrive under your guidance.
+<br>
+<hr>
+<br>
+<strong> Core Values </strong><br>
+You value honesty and humility, act with integrity, and follow through on commitments.<br>
+
+
+You approach challenges with determination and a sense of fun.<br>
+
+
+You are creative, innovative, and willing to take risks to lead.<br>
+
+
+You foster a strong team culture and are committed to its success.<br>
+
+
+You prioritize quality, professionalism, and delivering excellence.<br>
+
+
+You are passionate about mentoring and developing the potential in others.<br>
+
+<hr>
+<br>
+<strong>Requirements </strong><br>
+Proven ability to lead and inspire a high-performing culinary team.<br>
+
+
+A passion for food, creativity, and delivering exceptional dining experiences.<br>
+
+
+Strong organizational skills and attention to detail to ensure quality and consistency.<br>
+
+
+A desire to grow personally and professionally through continuous learning.<br>
+
+
+Ability to maintain composure and thrive in a fast-paced, dynamic environment.<br>
+
+<hr>
+<br>
+<strong> Compensation </strong> <br>
+
+ $20 - $25/hr<br>
+This includes participation in the restaurant tip pool.<br>
+
+<hr>
+<br>
+<strong> Benefits </strong><br>
+Eligible for tip or bonus pool programs (role-dependent), enhancing your earning potential<br>
+
+
+Extended health plan<br>
+
+
+Maternity, parental, and adoption leave top-up programs<br>
+
+
+Mental and physical health support<br>
+
+
+Flexible scheduling for personal and family needs<br>
+
+
+Industry partner incentives<br>
+
+
+Tuition, education, and professional accreditation subsidies<br>
+
+
+Recruitment and referral bonus programs<br>
+
+
+Ongoing leadership development opportunities <br>
+
+<hr>
+<br>
+<strong> Follow Your Path </strong><br>
+ At SIRC Restaurants, our success is driven by a dedicated and performance-oriented team. Your journey begins here. <br>
+SIRC Restaurants is an Equal Opportunity Employer. We thank all applicants for their time and interest in joining SIRC. Only those under consideration for roles will be contacted to proceed further in the recruitment process.<br>
+SIRC Restaurants provides reasonable accommodations for qualified candidates and employees, including accommodations for disabilities, medical needs, and religious practices.<br>
+
+                `
+            },
+            
+            { 
+                title: "Manager", 
+                location: "North", 
+                department: "Management", 
+                description: `
+                   </strong>Description</strong>
+ This is about you—your passion, purpose, and potential. At SIRC Restaurants, we see care, drive, confidence, and curiosity in you. When you join our team, you can expect energy, excitement, and a vibrant atmosphere. Through our people-focused culture, we are committed to the continuous growth and learning of our team members.<br>
+<br>
+
+The <strong>SIRC Accelerated Leadership Program</strong> is a three-month fast-track development opportunity designed for individuals with proven leadership abilities and transferable skills from prior experiences. During this program, you will gain in-depth knowledge of Operations, learning how to successfully lead a multi-million-dollar business while enhancing your leadership and people development skills. At SIRC, we empower our leaders through a coaching culture, providing the tools to thrive in both our restaurant business and the communities we serve.<br>
+<br>
+
+As a<strong> Service Leader</strong>, you will play a pivotal role in the success of a multi-million-dollar restaurant and its people. Your responsibilities will include building, leading, and developing a high-performing team of 50-100 individuals, fostering their personal and professional growth. You will drive strategic planning goals, execute quarterly objectives, and maintain the highest standards of quality, profitability, and exceptional guest experiences.<br>
+
+<hr>
+<br>
+<strong> Core Values </strong><br>
+You value honesty and humility, acting with integrity and following through on your commitments.<br>
+You approach challenges with determination and a sense of fun.<br>
+You are creative, visionary, and willing to take calculated risks.<br>
+You prioritize team collaboration and contribute to a strong culture.<br>
+You are passionate about quality, professionalism, and delivering excellence.<br>
+You are committed to unlocking potential in others.<br>
+
+<hr>
+<br>
+<strong>Requirements </strong><br>
+1-3+ years of experience in team leadership<br>
+Proven ability to coach, develop, and inspire high-performing teams<br>
+Experience recruiting, hiring, and retaining top talent<br>
+Ability to manage budgets and forecasts effectively<br>
+Strong attention to detail with a commitment to elevating the guest experience<br>
+Flexibility to support new restaurant openings across Canada.<br>
+
+<hr>
+<br>
+<strong> Compensation </strong> <br>
+
+ $48,000 - $100,000/year<br>
+ This includes participation in the restaurant tip pool.<br>
+
+<hr>
+<br>
+<strong> Benefits </strong><br>
+Eligible for tip or bonus pool programs (role-dependent), enhancing your earning potential<br>
+
+
+Extended health plan<br>
+
+
+Maternity, parental, and adoption leave top-up programs<br>
+
+
+Mental and physical health support<br>
+
+
+Flexible scheduling for personal and family needs<br>
+
+
+Industry partner incentives<br>
+
+
+Tuition, education, and professional accreditation subsidies<br>
+
+
+Recruitment and referral bonus programs<br>
+
+
+Ongoing leadership development opportunities <br>
+
+<hr>
+<br>
+<strong> Follow Your Path </strong><br>
+ At SIRC Restaurants, our success is driven by a dedicated and performance-oriented team. Your journey begins here. <br>
+SIRC Restaurants is an Equal Opportunity Employer. We thank all applicants for their time and interest in joining SIRC. Only those under consideration for roles will be contacted to proceed further in the recruitment process.<br>
+SIRC Restaurants provides reasonable accommodations for qualified candidates and employees, including accommodations for disabilities, medical needs, and religious practices.<br>
+
+
+ `
+            }
+        ];
+
+        const jobListingsContainer = document.getElementById("job-listings");
+        const searchButton = document.getElementById("search-button");
+        const locationFilter = document.getElementById("location-filter");
+        const departmentFilter = document.getElementById("department-filter");
+        const noResults = document.getElementById("no-results");
+        const jobDescription = document.getElementById("job-description");
+        const jobTitle = document.getElementById("job-title");
+        const jobDetails = document.getElementById("job-details");
+
+        // Function to render jobs
+        function renderJobs(filteredJobs) {
+            jobListingsContainer.innerHTML = ""; // Clear the current jobs
+            if (filteredJobs.length === 0) {
+                noResults.classList.remove("hidden");
+                return;
+            } else {
+                noResults.classList.add("hidden");
+            }
+
+            filteredJobs.forEach(job => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <span>${job.title}</span>
+                    <span>${job.location}</span>
+                `;
+                li.addEventListener("click", () => {
+                    jobDescription.style.display = "block";
+                    jobTitle.textContent = job.title;
+                    jobDetails.innerHTML = job.description; // Allow HTML content
+                });
+                jobListingsContainer.appendChild(li);
+            });
+        }
+
+        // Function to filter jobs based on location and department
+        function filterJobs() {
+            const locationValue = locationFilter.value;
+            const departmentValue = departmentFilter.value;
+
+            // Filter jobs based on selected criteria
+            const filteredJobs = jobData.filter(job => {
+                const locationMatch = locationValue === "all" || job.location === locationValue;
+                const departmentMatch = departmentValue === "all" || job.department === departmentValue;
+                return locationMatch && departmentMatch;
+            });
+
+            renderJobs(filteredJobs);
+        }
+
+        // Event listener for the search button
+        searchButton.addEventListener("click", () => {
+            filterJobs();
+        });
+
+        // Initial render with all jobs
+        renderJobs(jobData);
+    </script>
+       <footer>
+        <p>© 2024 SIRC Restaurants. All rights reserved.</p>
+    </footer>
+</body>
+</html>

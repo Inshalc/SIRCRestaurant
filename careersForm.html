@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+                background-image: url('https://images.unsplash.com/photo-1566041510394-cf7c8fe21800?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2hpdGUlMjBtYXJibGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww') ;
+
+        }
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+    
+        }
+        input, select, textarea, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        label {
+            font-weight: bold;
+        }
+              
+       .thank-you-message {
+    display: none;
+    text-align: center;
+    margin-top: 15px; /* Space from the submit button */
+    color: green;
+    font-size: 1.2em;
+    position: relative; /* Ensure it stays near the form */
+
+        }
+        .availability-container {
+           
+            grid-template-columns: auto auto; /* Two columns: Checkboxes and Days */
+            column-gap: 20px; /* Space between columns */
+            row-gap: 10px; /* Space between rows */
+            align-items: center;
+        }
+        .availability-container input[type="checkbox"] {
+            margin: 0; /* No extra spacing for checkboxes */
+            transform: scale(1.2); /* Slightly enlarge checkboxes for better visibility */
+        }
+        .availability-container .day-label {
+            text-align: left; /* Align day names to the left of their column */
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9rem;
+            display: none; /* Hidden by default */
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="applyForm">
+        <h2>Apply Now</h2>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" name="phone" pattern="\d{10}" title="Phone number must be 10 digits" required>
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" required>
+
+        <label>Have you interviewed with us in the last 6 months?</label>
+        <select id="interviewed" name="interviewed" required>
+            <option value="">Select an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="summary">Summary (Optional)</label>
+        <textarea id="summary" name="summary"></textarea>
+
+        <label for="resume">Upload Resume</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx,.odt,.rtf" required>
+
+        <label>Are you legally eligible to work in Canada?</label>
+        <select id="eligible" name="eligible" required>
+            <option value="">Select an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="referred">Were you referred, and if so, by whom? (Optional)</label>
+        <input type="text" id="referred" name="referred">
+
+        <label>Have you previously applied at or worked with us?</label>
+        <select id="appliedBefore" name="appliedBefore" required>
+            <option value="">Select an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+          <!-- Availability Section -->
+        <label>Availability</label>
+        <div class="availability-container">
+            <input type="checkbox" name="availability" value="Monday AM">
+            <span class="day-label">Monday AM</span>
+            <input type="checkbox" name="availability" value="Monday PM">
+            <span class="day-label">Monday PM</span>
+            <input type="checkbox" name="availability" value="Tuesday AM">
+            <span class="day-label">Tuesday AM</span>
+            <input type="checkbox" name="availability" value="Tuesday PM">
+            <span class="day-label">Tuesday PM</span>
+            <input type="checkbox" name="availability" value="Wednesday AM">
+            <span class="day-label">Wednesday AM</span>
+            <input type="checkbox" name="availability" value="Wednesday PM">
+            <span class="day-label">Wednesday PM</span>
+            <input type="checkbox" name="availability" value="Thursday AM">
+            <span class="day-label">Thursday AM</span>
+            <input type="checkbox" name="availability" value="Thursday PM">
+            <span class="day-label">Thursday PM</span>
+            <input type="checkbox" name="availability" value="Friday AM">
+            <span class="day-label">Friday AM</span>
+            <input type="checkbox" name="availability" value="Friday PM">
+            <span class="day-label">Friday PM</span>
+            <input type="checkbox" name="availability" value="Saturday AM">
+            <span class="day-label">Saturday AM</span>
+            <input type="checkbox" name="availability" value="Saturday PM">
+            <span class="day-label">Saturday PM</span>
+            <input type="checkbox" name="availability" value="Sunday AM">
+            <span class="day-label">Sunday AM</span>
+            <input type="checkbox" name="availability" value="Sunday PM">
+            <span class="day-label">Sunday PM</span>
+        </div>
+        <div class="error-message" id="availabilityError">
+            Please select at least one availability option.
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Application</button>
+    </form>
+
+    <div class="thank-you-message" id="thankYouMessage">
+        Thank you for your submission! We will get back to you soon.
+    </div>
+
+    <script>
+  document.getElementById('applyForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    const availabilityCheckboxes = document.querySelectorAll('input[name="availability"]:checked');
+    const availabilityError = document.getElementById('availabilityError');
+    const thankYouMessage = document.getElementById('thankYouMessage');
+    const form = document.getElementById('applyForm'); // Form element
+
+    // Custom validation for availability checkboxes
+    if (availabilityCheckboxes.length === 0) {
+        availabilityError.style.display = 'block'; // Show error message
+        return; // Stop further processing
+    } else {
+        availabilityError.style.display = 'none'; // Hide error message
+    }
+
+    // Hide the form and display only the thank-you message
+    form.style.display = 'none';
+    thankYouMessage.style.display = 'block';
+});
+
+
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIRC Gift Cards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="giftcard.css">
+</head>
+
+<body>
+ <nav>
+    <div class="nav-left">
+        <a href="homepage.html"> 🆂🅸🆁🅲 </a>
+        <a href="news.html">News</a>
+        <a href="location.html">Location</a>
+        <a href="menu.html">Menu</a>
+
+    </div>
+
+    <div class="nav-center"> 
+        <a href="ourSignatures.html"> Our Signatures</a>
+
+    </div>
+    <div class="nav-right">
+        <a href="reserve.html" class="btn-reserve">Reserve</a>
+        <a href="giftcard.html">Gift Cards</a>
+        <a href="careers.html">Careers</a>
+    </div>
+</nav>
+
+
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Gift Cards for Every Occasion</h1>
+        <p>Celebrate moments with our exclusive SIRC gift cards.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Gift Cards Section -->
+        <section class="gift-cards">
+            <h2>Choose Your Gift Card</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img src="silver.jpg" alt="Gift Card $50">
+                    <h3>$50 Gift Card</h3>
+                    <p>Perfect for casual meals or small celebrations.</p>
+                    <button class="btn">Buy Now</button>
+                </div>
+                <div class="card">
+                    <img src="gold.jpg" alt="Gift Card $100">
+                    <h3>$100 Gift Card</h3>
+                    <p>Great for family dinners or special occasions.</p>
+                    <p> <strong> Get $20 bonus card when you buy a $100 gift card! </strong></p>
+                    <p> <strong> Limitted Offer! </strong> </p>
+                    <button class="btn">Buy Now</button>
+                </div>
+                <div class="card">
+                    <img src="platinum.jpg" alt="Gift Card $200">
+                    <h3>$200 Gift Card</h3>
+                    <p>Ideal for luxurious dining experiences.</p>
+                    <button class="btn">Buy Now</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Membership Program Section -->
+        <section class="membership">
+            <h2>Join Our Membership Program</h2>
+            <p>Unlock exclusive rewards and earn points on every purchase!</p>
+            <div class="membership-benefits">
+                <div class="benefit">
+                    <h3>Earn Points</h3>
+                    <p>Receive 1 point for every $1 spent. Redeem points for rewards!</p>
+                </div>
+                <div class="benefit">
+                    <h3>Exclusive Offers</h3>
+                    <p>Access special deals, discounts, and promotions.</p>
+                </div>
+                <div class="benefit">
+                    <h3>Birthday Rewards</h3>
+                    <p>Enjoy a special gift from us on your birthday.</p>
+                </div>
+            </div>
+            <br>
+            <button id="join-now-btn" class="btn">Sign Up Now</button>
+        </section>
+
+        <!-- Rewards Levels Section -->
+        <section class="rewards">
+            <h2>Membership Rewards Levels</h2>
+            <div class="rewards-levels">
+                <div class="level silver">
+                    <h3>Silver</h3>
+                    <p>Up to 500 points: 5% off on purchases.</p>
+                </div>
+                <div class="level gold">
+                    <h3>Gold</h3>
+                    <p>500 - 1000 points: 10% off and a free dessert.</p>
+                </div>
+                <div class="level platinum">
+                    <h3>Platinum</h3>
+                    <p>1000+ points: 15% off, free appetizer, and priority reservations.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <!-- Payment Modal -->
+    <div id="payment-modal" class="hidden modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Payment Information</h2>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="card-number">Credit Card Number</label>
+                    <input type="text" id="card-number" maxlength="16" placeholder="1234 5678 9101 1121" required>
+                    <small class="error" id="card-error"></small>
+                </div>
+                <div class="form-group">
+                    <label for="expiration">Expiration Date</label>
+                    <input type="month" id="expiration" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" maxlength="3" placeholder="123" required>
+                </div>
+                <div class="form-group">
+                    <label for="postal-code">Postal Code</label>
+                    <input type="text" id="postal-code" maxlength="6" placeholder="A1B2C3" required>
+                    <small class="error" id="postal-error"></small>
+                </div>
+                <div class="form-group">
+                    <label for="city">Province</label>
+                    <input type="text" id="city" placeholder="Province" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="example@email.com" required>
+                </div>
+                <button type="submit" class="btn">Pay Now</button>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- Sign Up Modal -->
+   <div id="signup-modal" class="hidden modal">
+    <div class="modal-content">
+        <span class="close-modal" id="close-signup-modal">&times;</span>
+        <h2>Create an Account</h2>
+        <form id="signup-form">
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" placeholder="Enter your first name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" placeholder="Enter your last name" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-email">Email Address</label>
+                <input type="email" id="signup-email" placeholder="example@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="confirm-checkbox" required> I confirm the information entered is correct.
+                </label>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+    </div>
+</div>
+
+    <!-- JavaScript -->
+
+<script>
+document.querySelectorAll('.gift-cards .btn').forEach(button => {
+    button.addEventListener('click', () => {
+        document.getElementById('payment-modal').style.display = 'flex';
+    });
+});
+
+// Open Signup Modal when "Sign Up Now" button is clicked
+document.getElementById('join-now-btn').addEventListener('click', () => {
+    document.getElementById('signup-modal').style.display = 'flex';
+});
+
+// Close Payment Modal
+document.querySelector('.close-modal').addEventListener('click', () => {
+    document.getElementById('payment-modal').style.display = 'none';
+});
+
+// Close Signup Modal
+document.getElementById('close-signup-modal').addEventListener('click', () => {
+    document.getElementById('signup-modal').style.display = 'none';
+});
+
+// Form validation for Payment Form
+document.getElementById('payment-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const cardNumber = document.getElementById('card-number').value.trim();
+    const postalCode = document.getElementById('postal-code').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    let isValid = true;
+
+    // Validate Credit Card Number
+    if (!/^\d{16}$/.test(cardNumber)) {
+        isValid = false;
+        alert('Credit card number must be 16 digits.');
+    }
+const province = document.getElementById('city').value.trim();
+const canadianProvinces = [
+    "Alberta", "British Columbia", "Manitoba", "New Brunswick", 
+    "Newfoundland and Labrador", "Nova Scotia", "Ontario", 
+    "Prince Edward Island", "Quebec", "Saskatchewan", 
+    "Northwest Territories", "Nunavut", "Yukon"
+];
+
+if (!canadianProvinces.includes(province)) {
+    isValid = false;
+    alert('Invalid province. Please enter a valid Canadian province or territory.');
+}
+// Validate Expiration Date
+const expiration = document.getElementById('expiration').value.trim();
+const expirationDate = new Date(expiration);
+const cutoffDate = new Date(2024, 10, 27); // November 27, 2024
+
+if (expirationDate <= cutoffDate) {
+    isValid = false;
+    alert('Invalid Expiration date.');
+}
+    // Validate Postal Code
+    if (!/^[A-Za-z]\d[A-Za-z]\d[A-Za-z]\d$/.test(postalCode)) {
+        isValid = false;
+        alert('Postal code must be in format A1B2C3.');
+    }
+
+
+
+    // Validate Email
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        isValid = false;
+        alert('Enter a valid email address.');
+    }
+
+    if (isValid) {
+        alert('Payment successful!');
+        document.getElementById('payment-modal').style.display = 'none';
+    }
+});
+
+// Form validation for Sign Up Form
+document.getElementById('signup-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+
+    if (password !== confirmPassword) {
+        alert('Passwords do not match. Please try again.');
+    } else {
+        alert('Account created successfully!');
+        document.getElementById('signup-modal').style.display = 'none';
+    }
+});
+</script>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 SIRC Restaurants. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+

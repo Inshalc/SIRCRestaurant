@@ -1,0 +1,767 @@
+body {
+    font-family: 'Poppins', sans-serif;    margin: 0;
+    padding: 0;
+    background-image: url('https://cdn-gdhoioj.nitrocdn.com/gKiVMexaigEMkopjQFLelsZLRYcmWtVr/assets/images/optimized/rev-08d028d/cosmosurfaces.com/wp-content/uploads/2022/10/fce9ea01-8d0c-4e7b-a2a9-5ade6bc5d65f-scaled.jpg.webp');
+}
+
+/* Navigation bar */
+nav {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left, .nav-center, .nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-center {
+    flex-grow: 1;
+    justify-content: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f1c40f;
+}
+
+
+/* Hero section */
+.hero {
+    position: relative;
+    background-image: url('https://www.zochagroup.com/wp-content/uploads/2023/12/casa-madera-toronto-restaurant-reservations-1-hotel.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+
+/* General container styling for the features and right section */
+/* Ensure both sections end together */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Make the features and right section equal height */
+.features, .right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+}
+
+/* Map inside features */
+#map {
+  flex-grow: 1; /* Make the map grow to fill any remaining space */
+  max-height: 300px; /* Prevent the map from growing too large */
+}
+.features {
+    width: 45%; /* Adjust width for alignment */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background-image: url('https://cdn-gdhoioj.nitrocdn.com/gKiVMexaigEMkopjQFLelsZLRYcmWtVr/assets/images/optimized/rev-08d028d/cosmosurfaces.com/wp-content/uploads/2022/10/fce9ea01-8d0c-4e7b-a2a9-5ade6bc5d65f-scaled.jpg.webp');
+    background-size: cover;
+}
+
+.features h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.features ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.features li {
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight background for text readability */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#mapText {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#map {
+    width: 100%;
+    height: 300px; /* Adjust height to fit within the features box */
+    border: 2px solid #D4AF37;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.hours,
+.happy-hour,
+.contact {
+    text-align: center; /* Center align all text */
+}
+
+.hours h2,
+.happy-hour h2,
+.contact h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.hours p,
+.happy-hour p,
+.contact p {
+    margin: 5px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* Style for Checkmarks */
+.check-mark {
+    color: #d9b45c; /* Gold color for checkmark */
+    font-weight: bold;
+    margin-right: 8px; /* Adds spacing between the checkmark and the text */
+}
+
+/* Right Section (Black Box with Hours, Happy Hour, Contact) */
+.right-section {
+    width: 45%; /* Adjusts the width of the right section */
+    background-image: url('https://cdn-gdhoioj.nitrocdn.com/gKiVMexaigEMkopjQFLelsZLRYcmWtVr/assets/images/optimized/rev-08d028d/cosmosurfaces.com/wp-content/uploads/2022/10/fce9ea01-8d0c-4e7b-a2a9-5ade6bc5d65f-scaled.jpg.webp');
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.right-section h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: black;  
+
+}
+
+.right-section p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.right-section hr {
+    border: 0;
+    border-top: 1px solid #555;
+    margin: 20px 0;
+}
+
+/* end */
+
+
+
+.right-section h2 {
+    color: black;
+}
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d9b45c;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+a.button:hover {
+    background-color: #bfa04e;
+}
+
+/* Hero Section */
+.home-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://cdn-gdhoioj.nitrocdn.com/gKiVMexaigEMkopjQFLelsZLRYcmWtVr/assets/images/optimized/rev-08d028d/cosmosurfaces.com/wp-content/uploads/2022/10/fce9ea01-8d0c-4e7b-a2a9-5ade6bc5d65f-scaled.jpg.webp');
+    padding: 50px 20px;
+    border-bottom: 5px solid #C9A66B;
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.home-content img {
+    max-width: 400px;
+    border-radius: 10px;
+    margin-right: 40px;
+}
+
+.home-text {
+    max-width: 500px;
+}
+
+.home-text h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.home-text p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Experience Section */
+.experience-section {
+    background-image: url('https://www.zochagroup.com/wp-content/uploads/2023/12/casa-madera-toronto-restaurant-reservations-1-hotel.jpg');
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+
+}
+
+.experience-section2 {
+    background-image: url('https://viewthevibe.com/wp-content/uploads/2022/04/5-DSCF4978.jpeg');
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 5px solid #C9A66B;
+
+}
+
+
+.experience-section h2, .experience-section2 h2  {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.experience-section p, .experience-section2 p {
+    font-size: 16px;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+/* Featured Section */
+.featured-section, .Robot-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://cdn-gdhoioj.nitrocdn.com/gKiVMexaigEMkopjQFLelsZLRYcmWtVr/assets/images/optimized/rev-08d028d/cosmosurfaces.com/wp-content/uploads/2022/10/fce9ea01-8d0c-4e7b-a2a9-5ade6bc5d65f-scaled.jpg.webp');
+    padding: 50px 20px;
+    border-top: 5px solid #d9b45c;
+}
+
+.featured-content, .Robot-content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+    background-image: url('https://cdn-gdhoioj.nitrocdn.com/gKiVMexaigEMkopjQFLelsZLRYcmWtVr/assets/images/optimized/rev-08d028d/cosmosurfaces.com/wp-content/uploads/2022/10/fce9ea01-8d0c-4e7b-a2a9-5ade6bc5d65f-scaled.jpg.webp');
+
+}
+
+.featured-content img  {
+    width: 260px;
+    height: 200px;
+    border-radius: 10px;
+    margin-right: 40px;
+}
+
+.Robot-content img {
+    max-width: 200px;
+    height: 250px;
+    border-radius: 10px;
+    margin-right: 40px;
+
+}
+
+
+.featured-text, .Robot-text {
+    max-width: 500px;
+}
+
+.featured-text h1. .Robot-text h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: #1d1d1d;
+}
+
+
+.featured-text p , .Robot-text p{
+    font-size: 16px;
+}
+
+
+/* Video Section */
+/* General body styling */
+
+.section {
+    color: white; /* White text */
+    background-color: #000; /* Black background */
+    text-align: center;
+    padding: 20px 10px; /* Reduced padding */
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Heading styling */
+h1 {
+    font-size: 2em; /* Slightly smaller font size */
+    margin-bottom: 5px; /* Reduced bottom margin */
+    color: #ffffff;
+}
+
+/* Subtitle paragraph */
+.section p {
+    font-size: 1em; /* Reduced font size */
+    color: #ccc;
+    margin-bottom: 15px; /* Reduced space below paragraph */
+}
+
+/* Video grid container */
+.videos-grid {
+    display: grid;
+ grid-template-columns: repeat(6, 1fr);
+     gap: 10px; /* Reduced space between videos */
+    justify-items: center;
+    width: 95%; /* Slightly smaller width */
+    margin: 0 auto;
+}
+
+/* Individual video item */
+.video-item {
+    text-align: center;
+    width: 100%; /* Keep videos responsive */
+    max-width: 300px; /* Slightly smaller video cards */
+    margin: 0;
+}
+
+/* Video styling */
+.video-item video {
+    width: 100%;
+    border: 1px solid gold; /* Thinner border */
+    border-radius: 8px; /* Slightly less rounded corners */
+    box-shadow: 0 2px 4px rgba(255, 215, 0, 0.5); /* Subtle shadow */
+}
+
+/* Caption styling */
+.caption {
+    margin-top: 5px; /* Reduced space above caption */
+    font-size: 0.8em; /* Smaller font size */
+    color: #ffffff;
+    font-style: italic;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly less opaque background */
+    padding: 3px 8px; /* Reduced padding */
+    border-radius: 3px; /* Less rounded */
+}
+
+/* Popup styles */
+/* Popup content styling for stacked layout */
+.popup-content {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    width: 80%; /* Ensure it's responsive */
+    max-width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    display: flex;
+    flex-direction: column; /* Stack all child elements */
+    gap: 10px; /* Add spacing between form elements */
+}
+
+/* Form labels and inputs stacked vertically */
+.popup-content label {
+    display: block; /* Ensure label is full width */
+    font-size: 14px;
+    margin-bottom: 5px; /* Add space between label and input */
+}
+
+.popup-content input {
+    display: block; /* Ensure input takes a new line */
+    width: 100%; /* Make input stretch across full width */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Popup content styling for a cleaner layout */
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 350px; /* Adjusted max width for better fit */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    display: flex;
+    flex-direction: column; /* Stack all child elements */
+    gap: 15px; /* Add spacing between form elements */
+}
+
+/* Form labels and inputs stacked neatly */
+.popup-content label {
+    display: block; /* Ensure label takes full width */
+    font-size: 14px;
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+.popup-content input {
+    display: block; /* Inputs are block elements */
+    width: 100%; /* Full width within the popup */
+    padding: 10px; /* Adjust padding for a cleaner look */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Styling for buttons */
+.popup-content button {
+    width: 100%; /* Buttons span the full width */
+    padding: 10px; /* Comfortable padding for buttons */
+    border-radius: 5px;
+    font-size: 16px; /* Slightly larger font for readability */
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Submit button styling */
+.popup-content button[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+}
+
+.popup-content button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Close button styling */
+.popup-content button#close-popup {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.popup-content button#close-popup:hover {
+    background-color: #d9d9d9;
+}
+
+/* Error message styling */
+.error-message {
+    font-size: 12px;
+    color: red;
+    margin-top: -5px;
+}
+
+/* Popup container styling */
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+/* Header styling */
+.popup-content h2 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px; /* Spacing below the header */
+}
+
+/* Adjust spacing between submit and close buttons */
+.popup-content button[type="submit"] {
+    margin-bottom: 10px; /* Add space between buttons */
+}
+
+/* Promo Popup Styles */
+/* Main Popup Styling */
+.promo-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dimmed background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.promo-popup.hidden {
+    display: none; /* Hide the popup initially */
+}
+
+/* Content Box Styling */
+.promo-content {
+    background: black;
+    color: white;
+    width: 90%; /* Adjust for responsiveness */
+    max-width: 600px;
+    border-radius: 10px;
+    padding: 0; /* Remove default padding */
+    overflow: hidden; /* Ensure content stays within the box */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    text-align: center;
+}
+
+/* Close Button Styling */
+.close-promo {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.close-promo:hover {
+    color: #ccc;
+}
+
+/* Promo Body Layout */
+.promo-body {
+    display: flex;
+    flex-direction: column; /* Stack image and text */
+    align-items: center;
+    gap: 10px; /* Add spacing between elements */
+}
+
+/* Image Styling */
+.promo-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure image maintains aspect ratio */
+    border-bottom: 4px solid white; /* Optional border for styling */
+}
+
+/* Promo Text */
+.promo-text {
+    padding: 20px;
+}
+
+.promo-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.promo-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Promo Button */
+.promo-button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px; /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.promo-button:hover {
+    background-color: #f0f0f0;
+}
+
+footer {
+    background: black;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+        /* Chat Box Styling */
+        #chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        #chat-box {
+            width: 300px;
+            height: 500px;
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+            font-family: Arial, sans-serif;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: none; /* Hidden by default */
+            flex-direction: column;
+        }
+
+        #chat-header {
+            background: #C9A66B;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        #chat-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            font-size: 14px;
+            background: #ffffff;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .bot-message {
+            margin: 10px 0;
+            padding: 10px;
+            background: #C9A66B;
+            border-radius: 8px;
+            color: #333;
+        }
+
+        .user-message {
+            margin: 10px 0;
+            padding: 10px;
+            background: #FAD6A5;
+            border-radius: 8px;
+            color: #333;
+            text-align: right;
+        }
+
+        #chat-input-area {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: #f1f1f1;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        #chat-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        #send-btn {
+            background: #C9A66B;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        #send-btn:hover {
+            background: gold;
+        }
+
+        #toggle-chat-btn {
+            background: #C9A66B;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1001;
+        }
+
+        #toggle-chat-btn:hover {
+            background: gold;
+        }
+

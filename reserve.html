@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIRC Restaurant Reservation</title>
+    <link rel="stylesheet" href="reserve.css">
+
+</head>
+<body>
+<!-- Navigation bar -->
+<nav>
+    <div class="nav-left">
+        <a href="homepage.html"> 🆂🅸🆁🅲 </a>
+        <a href="news.html">News</a>
+        <a href="location.html">Location</a>
+        <a href="menu.html">Menu</a>
+
+    </div>
+
+    <div class="nav-center"> 
+        <a href="ourSignatures.html"> Our Signatures</a>
+
+    </div>
+    <div class="nav-right">
+        <a href="reserve.html" class="btn-reserve">Reserve</a>
+        <a href="giftcard.html">Gift Cards</a>
+        <a href="careers.html">Careers</a>
+    </div>
+</nav>
+
+<!-- Hero section -->
+<div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h1> BOOK ME </h1>
+        <h3>Claim Your Moment, Book Your Table Now!</h3>
+    </div>
+</div>
+
+<main>
+    <form class="reservation-form" id="reservationForm">
+        <h2>Book Your Table</h2>
+        <!-- Reservation form content -->
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+            <label for="time">Time:</label>
+            <select id="time" name="time" required></select>
+        </div>
+        <div class="form-group">
+            <label for="guests">Number of Guests:</label>
+            <select id="guests" name="guests" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit">Reserve Now</button>
+        </div>
+        <div class="confirmation" id="confirmationMessage"></div>
+    </form>
+</main>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const timeSelect = document.getElementById('time');
+
+    // Generate time slots in 30-minute intervals
+    const startTime = 12; // 12:00 PM
+    const endTime = 22; // 10:00 PM
+
+    for (let hour = startTime; hour < endTime; hour++) {
+        for (let minute = 0; minute < 60; minute += 30) {
+            const period = hour >= 12 ? 'PM' : 'AM';
+            const displayHour = hour > 12 ? hour - 12 : hour;
+            const time = `${displayHour}:${minute.toString().padStart(2, '0')} ${period}`;
+            const option = document.createElement('option');
+            option.value = time;
+            option.textContent = time;
+            timeSelect.appendChild(option);
+        }
+    }
+
+    const form = document.getElementById('reservationForm');
+    const confirmationMessage = document.getElementById('confirmationMessage');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        const guests = document.getElementById('guests').value;
+
+        if (Math.random() < 0.5) { // Simulate table availability
+            confirmationMessage.textContent = `Sorry, ${name}, the table for ${guests} guests on ${date} at ${time} is already booked. Please choose another time.`;
+            confirmationMessage.style.color = 'red';
+        } else {
+            confirmationMessage.textContent = `Thank you, ${name}! Your reservation for ${guests} guests on ${date} at ${time} has been confirmed.`;
+            confirmationMessage.style.color = 'green';
+        }
+    });
+
+    const formFooter = document.createElement('div');
+    formFooter.innerHTML = `
+    <div style="margin-top: 2rem; text-align: center;">
+            <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">Reservations for 7+</h2>
+            <p style="font-size: 1rem;">Looking for Private Dining? Custom menus and dedicated spaces
+            please reach out to <a href="mailto:sirc@restaurants.com" style="color: #f1c40f; text-decoration: none;">sirc@restaurants.com</a>.</p>
+        </div>
+    `;
+    document.querySelector('.reservation-form').appendChild(formFooter);
+});
+
+
+
+</script>
+
+<footer>
+    <p>© 2024 SIRC Restaurants. All rights reserved.</p>
+</footer>
+</body>
+</html>
+
+
+
+

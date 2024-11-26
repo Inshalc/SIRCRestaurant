@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Your Appetizer Dish</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image:url('https://viewthevibe.com/wp-content/uploads/2022/04/5-DSCF4978.jpeg');
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #d9b45c;
+            margin-bottom: 20px;
+             text-shadow: 0 1px 3px rgba(255, 215, 0, 0.3);
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 4px 10px rgba(255, 215, 0, 0.7), 0 0 15px rgba(255, 215, 0, 0.5);
+            }
+            100% {
+               text-shadow: 0 1px 3px rgba(255, 215, 0, 0.3);
+            }
+        }
+
+        .container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.2), rgba(0, 0, 0, 0.9));
+            box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0.4);
+        }
+
+        .container .spinBtn {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #ffd700, #b8860b);
+            border-radius: 50%;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #000;
+            letter-spacing: 0.1em;
+            border: 3px solid #fff;
+            cursor: pointer;
+            user-select: none;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.8);
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        .container .spinBtn::before {
+            content: '';
+            position: absolute;
+            top: -28px;
+            width: 20px;
+            height: 30px;
+            background: #ffd700;
+            clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 10px rgba(255, 215, 0, 0.6);
+            }
+            100% {
+                transform: scale(1.1);
+                box-shadow: 0 6px 15px rgba(255, 215, 0, 1);
+            }
+        }
+
+        .container .wheel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #222;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 
+                0 0 0 5px #333,
+                0 0 0 15px #ffd700,
+                0 0 20px 10px rgba(255, 215, 0, 0.5);
+            transition: transform 5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        }
+
+        .container .wheel .item {
+            position: absolute;
+            width: 50%; 
+            height: 50%;
+            background: var(--clr);
+            transform-origin: bottom right;
+            transform: rotate(calc(45deg * var(--i)));
+            clip-path: polygon(0 0, 56% 0, 100% 100%, 0 56%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .container .wheel .item span {
+            position: relative;
+            transform: rotate(45deg);
+            font-size: 0.8em;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 4px 2px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+<body>
+    <h1>Spin the Wheel to Choose Your Appetizer!</h1>
+    <br><br>
+    <div class="container">
+        <div class="spinBtn">Spin</div>
+        <div class="wheel">
+            <div class="item" style="--i:0; --clr:linear-gradient(135deg, #d4af37, #ffdf00);"><span>Hummus</span></div>
+            <div class="item" style="--i:1; --clr:linear-gradient(135deg, #b8860b, #daa520);"><span>Dip Trio</span></div>
+            <div class="item" style="--i:2; --clr:linear-gradient(135deg, #8b0000, #cd5c5c);"><span>Sweet Potato Fries</span></div>
+            <div class="item" style="--i:3; --clr:linear-gradient(135deg, #1c1c1c, #3d3d3d);"><span>Potato Wedges</span></div>
+            <div class="item" style="--i:4; --clr:linear-gradient(135deg, #006400, #228b22);"><span>Falafel</span></div>
+            <div class="item" style="--i:5; --clr:linear-gradient(135deg, #4b0082, #9370db);"><span>Fried Calamari</span></div>
+            <div class="item" style="--i:6; --clr:linear-gradient(135deg, #4682b4, #5f9ea0);"><span>Tabouli</span></div>
+            <div class="item" style="--i:7; --clr:linear-gradient(135deg, #8b4513, #d2691e);"><span>Red Lentil Soup</span></div>
+        </div>
+    </div>
+
+    <script>
+        const wheel = document.querySelector('.wheel');
+        const spinBtn = document.querySelector('.spinBtn');
+        let value = Math.ceil(Math.random() * 3600);
+
+        spinBtn.onclick = function() {
+            wheel.style.transform = `rotate(${value}deg)`;
+            value += Math.ceil(Math.random() * 3600);
+        };
+    </script>
+</body>
+</html>

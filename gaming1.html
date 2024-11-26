@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Your Main Course Dish!</title>
+   <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://latinbusinesstoday.com/wp-content/uploads/2022/03/Screen-Shot-2021-03-22-at-6.42.54-PM.jpg');
+
+            color: white;
+            line-height: 1.4;
+            padding: 10px;
+        }
+
+        header {
+            text-align: center;
+            padding: 10px;
+            background-color: #d9b45c ;
+            color: black;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+        }
+
+        header p {
+            font-size: 0.9rem;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 10px auto;
+            padding: 15px;
+            background: black;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        .question h2 {
+            font-size: 1rem;
+            color: #d9b45c ;
+            margin-bottom: 5px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        button {
+            display: block;
+            background-color: #d9b45c ;
+            color: black;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            margin: 10px auto;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: gold;
+            color: black;
+        }
+
+        #result {
+            text-align: center;
+            margin-top: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Discover Your Perfect Main Course Dish!</h1>
+        <p>Answer these 7 questions to find out your ideal dish.</p>
+    </header>
+    <main>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <h2>1. What’s your mood today?</h2>
+                <label><input type="radio" name="q1" value="adventurous"> Adventurous – I’m ready to try something new.</label>
+                <label><input type="radio" name="q1" value="comforting"> Comforting – I want something familiar and warm.</label>
+                <label><input type="radio" name="q1" value="light"> Light – Something fresh and healthy sounds good.</label>
+                <label><input type="radio" name="q1" value="indulgent"> Indulgent – I’m treating myself today!</label>
+            </div>
+            <!-- Question 2 -->
+            <div class="question">
+                <h2>2. What flavor profile do you prefer right now?</h2>
+                <label><input type="radio" name="q2" value="spicy"> Spicy – Bring the heat!</label>
+                <label><input type="radio" name="q2" value="sweet"> Sweet – Something to satisfy my sweet tooth.</label>
+                <label><input type="radio" name="q2" value="savory"> Savory – Rich, hearty flavors are calling my name.</label>
+                <label><input type="radio" name="q2" value="tangy"> Tangy – A hint of zest or sourness sounds great.</label>
+            </div>
+            <!-- Question 3 -->
+            <div class="question">
+                <h2>3. How hungry are you?</h2>
+                <label><input type="radio" name="q3" value="starving"> Starving – I need a feast!</label>
+                <label><input type="radio" name="q3" value="moderate"> Moderate – A regular meal will do.</label>
+                <label><input type="radio" name="q3" value="lightly"> Lightly hungry – A snack or appetizer would be enough.</label>
+                <label><input type="radio" name="q3" value="notSure"> Not sure – I’ll know when I see it!</label>
+            </div>
+            <!-- Question 4 -->
+            <div class="question">
+                <h2>4. What’s your protein preference today?</h2>
+                <label><input type="radio" name="q4" value="chicken"> Chicken – Grilled, fried, or roasted, I’m in.</label>
+                <label><input type="radio" name="q4" value="seafood"> Seafood – Fresh, light, and flavorful.</label>
+                <label><input type="radio" name="q4" value="vegetarian"> Vegetarian – I’d like something plant-based.</label>
+                <label><input type="radio" name="q4" value="beef"> Beef or lamb – Hearty and satisfying.</label>
+            </div>
+            <!-- Question 5 -->
+            <div class="question">
+                <h2>5. What type of dish sounds good?</h2>
+                <label><input type="radio" name="q5" value="soup"> Something hot and filling – a soup or stew.</label>
+                <label><input type="radio" name="q5" value="fingerFood"> Finger foods – easy and fun to eat.</label>
+                <label><input type="radio" name="q5" value="mainCourse"> A big main course – steak, pasta, or a special entrée.</label>
+                <label><input type="radio" name="q5" value="lightDish"> A light salad or bowl – fresh and simple.</label>
+            </div>
+            <!-- Question 6 -->
+            <div class="question">
+                <h2>6. What’s your favorite way to enjoy food?</h2>
+                <label><input type="radio" name="q6" value="boldSauces"> With bold sauces or dips – it’s all about the flavor boosters!</label>
+                <label><input type="radio" name="q6" value="plainSimple"> Plain and simple – let the main ingredients shine.</label>
+                <label><input type="radio" name="q6" value="mixed"> Mixed into a single bowl or plate – I like everything together.</label>
+                <label><input type="radio" name="q6" value="separate"> As separate components – I enjoy each item on its own.</label>
+            </div>
+            <!-- Question 7 -->
+            <div class="question">
+                <h2>7. What’s your favorite texture in food?</h2>
+                <label><input type="radio" name="q7" value="crispy"> Crispy or crunchy – I love that satisfying bite.</label>
+                <label><input type="radio" name="q7" value="soft"> Soft and tender – Comforting textures are my go-to.</label>
+                <label><input type="radio" name="q7" value="juicy"> Juicy or moist – Full of flavor with every bite.</label>
+                <label><input type="radio" name="q7" value="creamy"> Creamy and smooth – A silky, indulgent experience.</label>
+            </div>
+            <button type="button" id="submitQuiz">Find Out Your Dish!</button>
+        </form>
+        <div id="result">
+            <h2>Your Personality Dish Is:</h2>
+            <p id="dishName"></p>
+            <p id="dishDescription"></p>
+            <p id="dishPrice"></p>
+            <button type="button" id="playAgain">Play Again</button>
+        </div>
+    </main>
+    <script>
+        const quizForm = document.getElementById('quizForm');
+        const resultDiv = document.getElementById('result');
+        const dishName = document.getElementById('dishName');
+        const dishDescription = document.getElementById('dishDescription');
+        const dishPrice = document.getElementById('dishPrice');
+
+        document.getElementById('submitQuiz').addEventListener('click', function () {
+            const answers = Array.from(document.querySelectorAll('input[type="radio"]:checked')).map(input => input.value);
+
+            if (answers.length < 7) {
+                alert('Please answer all 7 questions!');
+                return;
+            }
+
+            let dish = {
+                name: "",
+                description: "",
+                price: ""
+            };
+
+            if (answers.includes("spicy") && answers.includes("chicken")) {
+                dish = {
+                    name: "Chicken Shawarma",
+                    description: "Marinated chicken grilled to perfection with fresh pita.",
+                    price: "$34.99"
+                };
+            } else if (answers.includes("savory") && answers.includes("beef")) {
+                dish = {
+                    name: "Grilled Lamb Chops",
+                    description: "Juicy lamb chops grilled with herb-infused yogurt sauce.",
+                    price: "$39.99"
+                };
+            } else if (answers.includes("light") && answers.includes("seafood")) {
+                dish = {
+                    name: "Salmon",
+                    description: "Flaky salmon fillet seasoned with our signature spice blend.",
+                    price: "$37.99"
+                };
+            } else {
+                dish = {
+                    name: "Macaroni Bechamel",
+                    description: "Baked pasta with creamy bechamel sauce and (plant-based) ground beef.",
+                    price: "$31.99"
+                };
+            }
+
+            dishName.innerText = dish.name;
+            dishDescription.innerText = dish.description;
+            dishPrice.innerText = `Price: ${dish.price}`;
+            resultDiv.style.display = 'block';
+            quizForm.style.display = 'none';
+        });
+
+        document.getElementById('playAgain').addEventListener('click', function () {
+            quizForm.reset();
+            resultDiv.style.display = 'none';
+            quizForm.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

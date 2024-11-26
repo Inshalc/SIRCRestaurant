@@ -1,0 +1,306 @@
+/* Global resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', serif;
+    background-image: url('https://cdn-gdhoioj.nitrocdn.com/gKiVMexaigEMkopjQFLelsZLRYcmWtVr/assets/images/optimized/rev-08d028d/cosmosurfaces.com/wp-content/uploads/2022/10/fce9ea01-8d0c-4e7b-a2a9-5ade6bc5d65f-scaled.jpg.webp');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    line-height: 1.6;
+}
+
+nav {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensures the nav spans the full width */
+    box-sizing: border-box; /* Includes padding in width calculation */
+    position: fixed; /* Keeps the nav at the top if scrolling */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures the nav is above other content */
+
+}
+
+.nav-left, .nav-center, .nav-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap if the screen is narrow */
+}
+
+.nav-center {
+    flex-grow: 1;
+    justify-content: center;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f1c40f;
+}
+
+/* General Spacing */
+header, main, footer {
+    padding: 20px;
+}
+
+/* Header Styling */
+.header {
+    position: relative;
+    height: 400px;
+    background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/df/b6/1a/casa-madera-park-room.jpg?w=1400&h=-1&s=1');
+    background-size: cover;
+    margin-bottom: 40px; /* Add space below the header */
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content {
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: bold;
+    color: white;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: white;
+}
+
+/* Location Filter Section */
+.filters {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Ensure proper alignment on smaller devices */
+    margin-bottom: 40px; /* Add space below filters */
+}
+
+.filters .dropdown {
+    flex: 1;
+    max-width: 300px;
+}
+
+.filters .search-bar {
+    flex: 2;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.filters select,
+.filters input {
+    padding: 12px;
+    font-size: 1.1em;
+    border: 1px solid #D4AF37;
+    border-radius: 10px;
+    background-color: white;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.filters select:focus,
+.filters input:focus {
+    outline: none;
+    border-color: #D4AF37;
+}
+
+.filters input {
+    width: 200px;
+}
+
+.filters span {
+    font-size: 1.5em;
+    color: #333;
+    align-self: center; /* Ensure proper alignment */
+}
+
+/* Location Cards Styling */
+.locations-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 40px; /* Add space below locations list */
+    padding: 0 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.location-item {
+    flex: 1 1 calc(33.33% - 30px); /* Three items per row, responsive */
+    max-width: calc(33.33% - 30px);
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #D4AF37;
+    display: flex;
+    flex-direction: column;
+}
+
+.location-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.location-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.location-item .details {
+    padding: 20px;
+    flex-grow: 1; /* Ensures button stays aligned at the bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.location-item .details h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.location-item .details p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.location-item .details .detail-btn {
+    background-color: #D4AF37;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    align-self: center; /* Center align button horizontally */
+    margin-top: auto; /* Push button to the bottom */
+}
+
+.location-item .details .detail-btn:hover {
+    background-color: #B99732;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px; /* Add space above footer */
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Map Styling */
+#map {
+    width: 50%;              /* Set map width to 50% */
+    height: 400px;           /* Set your desired height */
+    border: 2px solid gold;  /* Gold border around the map */
+    margin: 20px auto;       /* Center the map horizontally with top margin */
+    display: block;          /* Makes sure the map behaves as a block element */
+    border-radius: 10px;     /* Optional rounded corners */
+}
+
+/* Map Text */
+#mapText {
+    text-align: center;  /* Center the text */
+    font-size: 1.5rem;    /* Size of the text */
+    color: black;         /* Black text color */
+    margin-bottom: 10px;  /* Space below the text before the map */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .location-item {
+        flex: 1 1 calc(50% - 30px); /* Two items per row on tablets */
+        max-width: calc(50% - 30px);
+    }
+
+    .filters {
+        flex-direction: column; /* Stack filters vertically */
+        align-items: stretch; /* Stretch to full width */
+    }
+
+    .filters .dropdown,
+    .filters .search-bar {
+        flex: 1;
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .filters input {
+        width: 100%; /* Full-width search inputs */
+    }
+
+    #map {
+        width: 80%; /* Map takes more space on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .location-item {
+        flex: 1 1 100%; /* One item per row on small screens */
+        max-width: 100%;
+    }
+
+    #map {
+        width: 90%; /* Even more width for the map on very small screens */
+    }
+}
+
+footer {
+    background: black;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+

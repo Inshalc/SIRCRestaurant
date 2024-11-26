@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Homepage.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Bellefair&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+
+    <title>SIRC</title>
+</head>
+<body>
+
+<!-- Navigation bar -->
+<nav>
+    <div class="nav-left">
+        <a href="homepage.html"> 🆂🅸🆁🅲 </a>
+        <a href="news.html">News</a>
+        <a href="location.html">Location</a>
+        <a href="menu.html">Menu</a>
+
+    </div>
+
+    <div class="nav-center"> 
+
+        <a href="ourSignatures.html"> Our Signatures</a>
+
+    </div>
+
+    <div class="nav-right">
+        <a href="reserve.html" class="btn-reserve">Reserve</a>
+        <a href="giftcard.html">Gift Cards</a>
+        <a href="careers.html">Careers</a>
+    </div>
+</nav>
+<!-- Hero section -->
+<div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h1> SIRC </h1>
+        <h3>Experience culinary excellence in the heart of Toronto.</h3>
+    </div>
+</div>
+
+<!-- Home first paragraph -->
+
+  <section class="home-section">
+              <div class="home-content">
+                  <img src="https://img.freepik.com/premium-photo/elegant-arabic-food-feast-with-variety-traditional-dishes-colorful-garnishes-ornate-platters_1321417-6180.jpg?semt=ais_hybrid" alt="Fine Middle Eastern Cuisine">
+                  <div class="home-text">
+                      <h2>Fine Middle Eastern Cuisine</h2>
+                      <p>Welcome to SIRC, where Middle Eastern cuisine is elevated to perfection! Indulge in the rich, authentic flavors of sizzling kebabs, tender shawarma, and silky hummus, all prepared with care and tradition. Our welcoming atmosphere and carefully curated dishes promise an unforgettable dining experience. Whether it’s your first visit or your fiftieth, SIRC is where flavor meets hospitality. Come taste the Middle East—your next favorite meal is waiting!</p>
+                      <a href="menu.html" class="button">View Menu</a>
+
+                  </div>
+              </div>
+          </section>
+       
+      <main>
+          <section class="experience-section">
+              <h2>A Dining Experience to Remember</h2>
+              <p>Experience the essence of Middle Eastern cuisine and culture as we prepare and serve you genuine, exquisite dishes in a traditional comfortable setting. Our family has been in the food business for over 50 years. Our passion is evident in the quality and service we provide. For your convenience, we also offer an extensive catering menu for home or office and accommodations for private parties are also available.</p>
+              <a href="reserve.html" class="button">Reserve a Table</a>
+          </section>
+       
+<!-- Robots -->
+          <section class="featured-section">
+              <div class="featured-content">
+                  <img src="ipad.jpg" alt="People Ordering on the Ipad">
+                  <div class="featured-text">
+                      <h2> Ipad Self-Ordering</h2>
+                      <p> Experience dining reimagined! At our restaurant, every table is equipped with an iPad, so you can browse the menu, place your order, and customize your meal with just a few taps—no need to wait for a server. It's fast, easy, and all about you! </p>
+                  </div>
+              </div>
+          </section>
+
+
+
+   <section class="experience-section2">
+        <h2>Finish the Feast Challenge</h2>
+        <p>Think you and your friend can handle the ultimate foodie challenge? Every Friday at SIRC, we bring the heat with our "Finish the Feast" Challenge! Here's the deal: you and a friend get one massive plate piled high with our most delicious dishes. If you conquer it in under an hour, it’s on us. But if you can’t? Well, you’ll have to pick up the tab! Think you’ve got what it takes? Grab a friend, bring your appetite, and join us this Friday for the tastiest challenge in town!</p>
+       <a href="#" class="button" id="signup-button">Sign Up</a>
+    </section>
+</main>
+
+<!-- Sign-Up Popup -->
+<div id="signup-popup" class="popup hidden">
+    <div class="popup-content">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" placeholder="Enter your address" required>
+
+            <label for="city">Province:</label>
+            <input type="text" id="city" placeholder="Enter your Province" required>
+            <p class="error-message" id="city-error"></p>
+
+            <label for="postalcode">Postal Code:</label>
+            <input type="text" id="postalcode" placeholder="Enter your postal code" required>
+            <p class="error-message" id="postal-error"></p>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" placeholder="Enter your phone number" required>
+            <p class="error-message" id="phone-error"></p>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        <button id="close-popup">Close</button>
+    </div>
+</div>
+
+<script>
+    // JavaScript for toggling the Sign-Up popup
+    const signupButton = document.getElementById('signup-button');
+    const closeButton = document.getElementById('close-popup');
+    const popup = document.getElementById('signup-popup');
+
+    signupButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        popup.classList.remove('hidden');
+    });
+
+    closeButton.addEventListener('click', () => {
+        popup.classList.add('hidden');
+    });
+
+    // Validation logic
+    const form = document.getElementById('signup-form');
+    const cityInput = document.getElementById('city');
+    const postalInput = document.getElementById('postalcode');
+    const phoneInput = document.getElementById('phone');
+
+    const cityError = document.getElementById('city-error');
+    const postalError = document.getElementById('postal-error');
+    const phoneError = document.getElementById('phone-error');
+
+    const canadianCities = [
+        "Toronto", "Vancouver", "Montreal", "Calgary", "Edmonton", "Ottawa", "Winnipeg", "Quebec City", "Halifax", "Victoria"
+    ];
+
+    form.addEventListener('submit', (e) => {
+        let isValid = true;
+
+        // Validate city
+        if (!canadianCities.includes(cityInput.value)) {
+            cityError.textContent = "Please enter a valid Canadian city.";
+            isValid = false;
+        } else {
+            cityError.textContent = "";
+        }
+
+        // Validate postal code (A1A 1A1 format)
+        const postalRegex = /^[A-Za-z]\d[A-Za-z]\s?\d[A-Za-z]\d$/;
+        if (!postalRegex.test(postalInput.value)) {
+            postalError.textContent = "Please enter a valid postal code (e.g., A1A 1A1).";
+            isValid = false;
+        } else {
+            postalError.textContent = "";
+        }
+
+        // Validate phone number (10 digits)
+        const phoneRegex = /^\d{10}$/;
+        if (!phoneRegex.test(phoneInput.value)) {
+            phoneError.textContent = "Phone number must be exactly 10 digits.";
+            isValid = false;
+        } else {
+            phoneError.textContent = "";
+        }
+
+        if (!isValid) {
+            e.preventDefault(); // Prevent form submission if invalid
+        }
+    });
+</script>
+
+
+ <section class="Robot-section">
+              <div class="Robot-content">
+                  <img src="https://images.squarespace-cdn.com/content/v1/5a74702ce45a7cd601df944b/1694196227092-AHVUUJMIZ1Y3QHXKMCWV/TJV09634.JPEG?format=500w" alt="Robot seld Ordering">
+                  <div class="Robot-text">
+                      <h2> Robots at Your Service</h2>
+                      <p> At our restaurant, robots deliver your food straight to your table, making dining easier than ever. Place your order on the iPad, and if you need anything else, just tap a button to send a request. The robots will handle it promptly, ensuring a smooth and enjoyable experience! </p>
+                  </div>
+              </div>
+          </section>
+
+
+<div class="container">
+  <!-- Location Features Section -->
+  <div class="features">
+    <h3>Location Features:</h3>
+    <ul>
+      <li>✔️ Robots Serving</li>
+      <li>✔️ Kids Play Area</li>
+      <li>✔️ High Chairs Available</li>
+      <li>✔️ Table Ordering iPad</li>
+      <li>✔️ Wheelchair Accessible</li>
+      <li>✔️ Patio Seating</li>
+    </ul>
+
+    <!-- Map Section Inside Features Box -->
+
+    <div id="map" style="width: 100%; height: 300px; border: 2px solid #D4AF37; border-radius: 10px; margin-top: 20px;"></div>
+  </div>
+
+  <!-- Right Section (Hours, Happy Hour, Contact) -->
+  <div class="right-section">
+    <div class="hours">
+      <h2>Hours of Operation</h2>
+      <p><span>Monday – Thursday</span> &nbsp;&nbsp;12:00pm – 12:00am</p>
+      <p><span>Friday – Saturday</span> &nbsp;&nbsp;12:00pm – 1:00am</p>
+      <p><span>Sunday</span> &nbsp;&nbsp;12:00pm – 12:00am</p>
+    </div>
+    <hr>
+
+    <div class="happy-hour">
+      <h2>Happy Hours</h2>
+      <p><span>Daily</span> &nbsp;&nbsp;2:00pm – 5:00pm</p>
+      <p><span>Fridays</span> &nbsp;&nbsp;12:00pm – 3:00</p>
+      <p><span>Saturdays – Sundays</span> &nbsp;&nbsp;12:00pm – 5:00pm</p>
+      <p><strong>Up to 50% off drinks every Tuesday.</strong></p>
+      <p><strong>15% off the entire menu. Go Treat yourself.</strong></p>
+    </div>
+    <hr>
+
+    <div class="contact">
+      <h2>Contact Information</h2>
+      <p><span>Phone</span> &nbsp;&nbsp;905-555-5050</p>
+      <p><span>Email</span> &nbsp;&nbsp;sirc@restaurants.com </p>
+    </div>
+  </div>
+</div>
+
+    <!-- Video Section -->
+
+     <div class="section">
+        <h1>Experience Moments at SIRC</h1>
+        <p>See What Our Customers Are Saying—Experience the Magic of SIRC Dining!</p>
+        <div class="videos-grid">
+            <!-- Video 1 -->
+            <div class="video-item">
+                <video controls>
+                    <source src="customer1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="caption">"SIRC dining is absolutely amazing! ⭐⭐⭐⭐⭐"</p>
+            </div>
+            <!-- Video 2 -->
+            <div class="video-item">
+                <video controls>
+                    <source src="customer2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="caption">"Incredible service and atmosphere! ⭐⭐⭐⭐⭐"</p>
+            </div>
+            <!-- Video 3 -->
+            <div class="video-item">
+                <video controls>
+                    <source src="customer3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="caption">"The best dining experience ever! ⭐⭐⭐⭐⭐"</p>
+            </div>
+            <!-- Video 4 -->
+            <div class="video-item">
+                <video controls>
+                    <source src="customer4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="caption">"Highly recommend it! ⭐⭐⭐⭐⭐"</p>
+            </div>
+            <!-- Video 5 -->
+            <div class="video-item">
+                <video controls>
+                    <source src="customer5.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="caption">"The food and staff were fantastic! ⭐⭐⭐⭐⭐"</p>
+            </div>
+            <!-- Video 6 -->
+            <div class="video-item">
+                <video controls>
+                    <source src="customer6.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="caption">"I can't wait to visit again! ⭐⭐⭐⭐⭐"</p>
+            </div>
+        </div>
+    </div>
+<!-- Pop Up -->
+<div id="promo-popup" class="promo-popup hidden">
+    <div class="promo-content">
+        <!-- Close Button -->
+        <button class="close-promo" id="close-promo">&times;</button>
+        
+        <!-- Promo Body -->
+        <div class="promo-body">
+            <!-- Image on the left -->
+            <img src="https://suppercentral.ca/cdn/shop/products/best-gift-cards-2021-1637270343.jpg?v=1656956459" 
+                 alt="Gift Card" 
+                 class="promo-image">
+            
+            <!-- Text on the right -->
+            <div class="promo-text">
+                <h2>More Than a Gift Card</h2>
+                <p>Get a $20 bonus card when you buy a $100 gift card!<br>Terms apply.</p>
+                <!-- Fixed Buy Now Button -->
+                <a href="giftcard.html" class="promo-button">Buy Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // JavaScript for the popup
+    const promoPopup = document.getElementById('promo-popup');
+    const closePromo = document.getElementById('close-promo');
+
+    // Show the popup after 1 second
+    setTimeout(() => {
+        promoPopup.classList.remove('hidden');
+    }, 1000); // 1-second delay
+
+    // Close the popup when the close button is clicked
+    closePromo.addEventListener('click', () => {
+        promoPopup.classList.add('hidden');
+    });
+</script>
+
+
+
+    <!-- Include Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Chat Box -->
+<div id="chat-container">
+    <button id="toggle-chat-btn">Live Chat</button>
+    <div id="chat-box">
+        <div id="chat-header">SIRC Restaurant Chat</div>
+        <div id="chat-messages"></div>
+        <div id="chat-input-area">
+            <input id="chat-input" type="text" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+const chatBox = document.getElementById('chat-box');
+const toggleChatBtn = document.getElementById('toggle-chat-btn');
+const chatMessages = document.getElementById('chat-messages');
+const chatInput = document.getElementById('chat-input');
+const sendBtn = document.getElementById('send-btn');
+
+// Adding a close button to the chat header
+const chatHeader = document.getElementById('chat-header');
+const closeBtn = document.createElement('span');
+closeBtn.textContent = '×';
+closeBtn.style.cssText = 'cursor: pointer; float: right; font-size: 18px; margin-right: 10px;';
+chatHeader.appendChild(closeBtn);
+
+toggleChatBtn.addEventListener('click', () => {
+    chatBox.style.display = 'flex'; // Show the chat box
+    toggleChatBtn.style.display = 'none'; // Hide the chat button
+});
+
+closeBtn.addEventListener('click', () => {
+    chatBox.style.display = 'none'; // Hide the chat box
+    toggleChatBtn.style.display = 'block'; // Show the chat button again
+});
+
+sendBtn.addEventListener('click', () => {
+    const userMessage = chatInput.value.trim();
+    if (!userMessage) return;
+
+    appendMessage(userMessage, 'user-message');
+    handleResponse(userMessage);
+    chatInput.value = '';
+});
+
+function appendMessage(message, type = 'bot-message') {
+    const msgDiv = document.createElement('div');
+    msgDiv.textContent = message;
+    msgDiv.classList.add(type);
+    chatMessages.appendChild(msgDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll
+}
+
+let step = 0;
+
+function handleResponse(userMessage) {
+    const lowerCaseMessage = userMessage.toLowerCase();
+
+    // Allow user to type "exit" to return to the main menu
+    if (lowerCaseMessage === "exit") {
+        step = 0;
+        appendMessage("Returning to the main menu...");
+        handleResponse(""); // Restart the main menu
+        return;
+    }
+
+    if (step === 0) {
+        appendMessage("Hi! How can I help you today? Please type a number to choose from the options below:\n1. Make a reservation\n2. Ask about the menu\n3. Know our hours and location\n4. Ask about dietary preferences (e.g., halal, vegan)\n5. Other questions");
+        step++;
+    } else if (step === 1) {
+        switch (lowerCaseMessage) {
+            case "1":
+                appendMessage("Redirecting you to the reservation page...");
+                setTimeout(() => {
+                    window.location.href = "reserve.html"; // Replace with your reservation page URL
+                }, 2000);
+                break;
+            case "2":
+                appendMessage("Redirecting you to the menu page...");
+                setTimeout(() => {
+                    window.location.href = "menu.html"; // Replace with your menu page URL
+                }, 2000);
+                break;
+            case "3":
+                appendMessage("Here’s what I can help with:\n1. What are your hours of operation?\n2. What time do you close today?\n3. Where are you located?\n4. Do you offer parking?");
+                step = 300; // Hours and location
+                break;
+            case "4":
+                appendMessage("Let me help with dietary concerns:\n1. Is your food halal?\n2. Do you have vegan or vegetarian options?\n3. Do you offer nut-free or allergy-sensitive dishes?\n4. Is your food gluten-free?");
+                step = 400; // Dietary preferences
+                break;
+            case "5":
+                appendMessage("Here are some frequently asked questions:\n1. Can I order online?\n2. Do you offer catering or private event hosting?\n3. What is the 'Finish the Feast Challenge'?\n4. What are your Happy Hour deals?");
+                step = 500; // Other questions
+                break;
+            default:
+                appendMessage("Invalid option. Please select a number from 1 to 5, or type 'exit' to return to the main menu.");
+        }
+    } else if (step === 300) {
+        handleHoursAndLocation(lowerCaseMessage);
+    } else if (step === 400) {
+        handleDietaryQuestions(lowerCaseMessage);
+    } else if (step === 500) {
+        handleOtherQuestions(lowerCaseMessage);
+    } else {
+        appendMessage("I'm not sure how to handle that. Please type a valid option or 'exit' to return to the main menu.");
+    }
+}
+
+function handleHoursAndLocation(option) {
+    switch (option) {
+        case "1":
+            appendMessage("Our hours of operation are:\n- Monday to Thursday: 12:00 PM – 12:00 AM\n- Friday and Saturday: 12:00 PM – 1:00 AM\n- Sunday: 12:00 PM – 12:00 AM.");
+            break;
+        case "2":
+            appendMessage("Today, we close at 12:00 AM.");
+            break;
+        case "3":
+            appendMessage("SIRC is located in Toronto so does other location. Please visit our location page for directions and additional details.");
+            break;
+        case "4":
+            appendMessage("Yes, we offer parking for our guests.");
+            break;
+        default:
+            appendMessage("Invalid option. Please select a number from 1 to 4, or type 'exit' to return to the main menu.");
+    }
+}
+
+function handleDietaryQuestions(option) {
+    switch (option) {
+        case "1":
+            appendMessage("Yes, our food is halal, offering authentic Middle Eastern dishes prepared with care and tradition.");
+            break;
+        case "2":
+            appendMessage("Yes, we have vegan and vegetarian options. You can explore these dishes on our menu page.");
+            break;
+        case "3":
+            appendMessage("Yes, we can accommodate nut-free or allergy-sensitive dishes. Please let us know your needs.");
+            break;
+        case "4":
+            appendMessage("Yes, we offer gluten-free options. Let us know your dietary requirements when placing your order.");
+            break;
+        default:
+            appendMessage("Invalid option. Please select a number from 1 to 4, or type 'exit' to return to the main menu.");
+    }
+}
+
+function handleOtherQuestions(option) {
+    switch (option) {
+        case "1":
+            appendMessage("unfortunately not, you can not order online, but feel free to call SIRC to make an order");
+            break;
+        case "2":
+            appendMessage("Yes, SIRC provides catering for home or office events and private parties. Contact us at 905-555-5050 or via email at sirc@restaurants.com for details.");
+            break;
+        case "3":
+            appendMessage("The 'Finish the Feast Challenge' happens every Friday! You and a friend have one hour to finish a massive plate of delicious dishes. If you succeed, it’s free! If not, you’ll need to cover the bill.");
+            break;
+        case "4":
+            appendMessage("Happy Hour timings and deals:\n- Daily: 2:00 PM – 5:00 PM\n- Fridays: 12:00 PM – 3:00 PM\n- Saturdays and Sundays: 12:00 PM – 5:00 PM\n- Special Deals: 50% off drinks on Tuesdays and 15% off the entire menu.");
+            break;
+        default:
+            appendMessage("Invalid option. Please select a number from 1 to 4, or type 'exit' to return to the main menu.");
+    }
+}
+
+</script>
+
+
+
+
+    
+  <footer class="footer">
+        <p>© 2024 SIRC Restaurants. All rights reserved.</p>
+    </footer>
+</body>
+</html>

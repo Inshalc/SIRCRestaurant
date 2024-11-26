@@ -1,0 +1,291 @@
+
+body {
+    margin: 0; /* Removes default body margin to prevent whitespace */
+    padding-top: 60px; /* Adjust for fixed nav height */
+}
+
+nav {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensures the nav spans the full width */
+    box-sizing: border-box; /* Includes padding in width calculation */
+    position: fixed; /* Keeps the nav at the top if scrolling */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures the nav is above other content */
+
+}
+
+.nav-left, .nav-center, .nav-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap if the screen is narrow */
+}
+
+.nav-center {
+    flex-grow: 1;
+    justify-content: center;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f1c40f;
+}
+
+
+/* Horizontal line under the section heading */
+.section-line {
+    width: 80%;  /* Adjust width of the line */
+    border: 0;
+    height: 1px;
+    background-color: #0a0a0a;  /* Dark color for the line */
+    margin: 20px 0;  /* Space above and below the line */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  /* Center the line */
+}
+
+/* Section heading style */
+.section-heading {
+    font-size: 40px;
+    font-weight: bold;
+    color: #0a0a0a;
+    text-align: center;
+    margin: 40px 0 20px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Section for "Meet Our Chefs" */
+.signature-dishes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+}
+
+.dish {
+    position: relative;
+    flex: 1;
+    margin: 0 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 650px; /* Ensure all blocks are the same height */
+}
+
+.dish img {
+    width: 100%;
+    height: 100%; /* Make the images fill the height */
+    object-fit: cover; /* Make sure the image covers the area without distorting */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.big-letter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 150px;
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.dish:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dish:hover img {
+    transform: scale(1.05);
+}
+
+.dish:hover .big-letter {
+    color: rgba(255, 255, 255, 1);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: black;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s;
+}
+
+.popup-close:hover {
+    color: red;
+}
+
+.popup h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #f3f3f3;
+}
+
+.popup p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #dcdcdc;
+}
+
+/* Backstory Section */
+.backstory-section {
+    width: 100%;
+    padding: 40px 10%;
+    font-family:  'Georgia', serif;
+    background: black;
+    color: white;
+    text-align: justify;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.backstory-content h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.backstory-content p {
+    line-height: 1.8;
+    font-size: 18px;
+}
+/* Hover Effect for Popup */
+.backstory-section:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.backstory-section:hover p {
+    display: block;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Grid Container */
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 40px 10%;
+    background: black;
+}
+
+/* Individual Card */
+.story-card {
+    background: #121212;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Content */
+.story-card h3 {
+    font-size: 24px;
+    color: rgb(237, 235, 215);
+    margin-bottom: 15px;
+}
+
+.story-card p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #f3f2ef;
+}
+
+/* Hover Effect */
+.story-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Wide Card */
+.story-card.wide {
+    grid-column: span 2;
+}
+
+/* Light Patterns */
+.story-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1), transparent 70%);
+    z-index: 0;
+    transition: opacity 0.3s ease;
+}
+
+.story-card:hover::before {
+    opacity: 0.2;
+}
+footer {
+    background: black;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
